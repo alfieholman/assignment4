@@ -269,7 +269,7 @@
 
 <script>
   function validateForm() {
-    var x = document.forms["login"].value
+    var x = document.forms["login"].value                 /*need to change so it isnt using the for ID but the name which needs to be unique */
     var y = document.forms["password"].value;
     if (x == "james" && y == "pass123") {
       window.location.replace("personalport.html");
