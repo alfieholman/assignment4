@@ -122,7 +122,7 @@
         transform: scale(0.95);
       }
       
-      input[type=text] {
+      input[type=text], [type=password] {
         background-color: #f6f6f6;
         border: none;
         color: #0d0d0d;
@@ -143,12 +143,12 @@
         border-radius: 5px 5px 5px 5px;
       }
       
-      input[type=text]:focus {
+      input[type=text], [type=password] :focus {
         background-color: #fff;
         border-bottom: 2px solid #5fbae9;
       }
       
-      input[type=text]:placeholder {
+      input[type=text], [type=password] :placeholder {
         color: #cccccc;
       }
       
@@ -268,13 +268,27 @@
 
 
 <script>
-  function validateForm() {
-    var x = document.forms["login"].value                 /*need to change so it isnt using the for ID but the name which needs to be unique */
-    var y = document.forms["loginpass"].value;
-    if (x == "james" && y == "pass123") {
-      window.location.replace("personalport.html");
-    }
-  }
+  $(document).ready(function() {
+    //$('#username').focus();
+
+    $('#submit').click(function() {
+
+        event.preventDefault(); // prevent PageReLoad
+
+       var ValidEmail = $('#text').val() === 'james'; // User validate
+var ValidPassword = $('#password').val() === 'pass123'; // Password validate
+
+        if (ValidEmail === true && ValidPassword === true) { // if ValidEmail & ValidPassword
+
+            window.location = "personalport.html"; // go to home.html
+        }
+        else {
+            $('.error').css('display', 'block'); // show error msg
+        }
+    });
+});
+
+Resources
   </script>
 
 
@@ -306,8 +320,8 @@
         <!-- Login Form -->
         <form onsubmit="validateForm()">
           <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-          <input type="text" id="password" class="fadeIn third" name="loginpass" placeholder="password">
-          <input type="submit" class="fadeIn fourth" value="Log In">
+          <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+          <button type="submit" id="submit" class="fadeIn fourth" value="Log In">
         </form>
     
         <!-- Remind Passoword -->
