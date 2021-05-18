@@ -270,7 +270,7 @@
 <script>
   function validateForm() {
     var x = document.forms["login"].value                 /*need to change so it isnt using the for ID but the name which needs to be unique */
-    var y = document.forms["password"].value;
+    var y = document.forms["loginpass"].value;
     if (x == "james" && y == "pass123") {
       window.location.replace("personalport.html");
     }
@@ -306,7 +306,7 @@
         <!-- Login Form -->
         <form onsubmit="validateForm()">
           <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+          <input type="text" id="password" class="fadeIn third" name="loginpass" placeholder="password">
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
     
