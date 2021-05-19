@@ -27,35 +27,46 @@
 
       
     <body>
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
+      <form id="race-form">
+        <input type="text" name="stroke" id="stroke" placeholder="Stroke">
+        <input type="text" name="dis" id="dis" placeholder="Distance">
+        <input type="text" name="time" id="time" placeholder="Time">
+        <input type="button" value="Submit" onclick="addRow()" >
+      </form>
 
-                <th scope="row">Mark</th>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-
-                <th scope="row">Jacob</th>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-
-                <th scope="row" colspan="2">Larry the Bird</th>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+      <table class="table table-hover" id="table">
+        <thead>
+          <tr class="p-3 mb-2 bg-dark text-white">
+            <th scope="col" id="stroke">Stroke</th>
+            <th scope="col" id="dis">Race distance</th>
+            <th scope="col" id="time">Time</th>
+          </tr>
+        </thead>
+      </table>
     </body>
+
+
+    <script>
+      function addRow() 
+        {
+          "use strict";
+           var table = document.getElementById("table");
+           var row= document.createElement("tr");
+           var td1 = document.createElement("td");
+           var td2 = document.createElement("td");
+           var td3 = document.createElement("td");    
+       
+           td1.innerHTML = document.getElementById("stroke").value;
+           td2.innerHTML  = document.getElementById("dis").value;
+           td3.innerHTML  = document.getElementById("time").value;
+       
+           row.appendChild(td1);
+           row.appendChild(td2);
+           row.appendChild(td3);
+       
+           table.children[0].appendChild(row);
+        }
+      </script>
 
 
       <footer
