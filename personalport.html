@@ -6,75 +6,113 @@
 <link rel="stylesheet" href="css/mdb.min.css" />
 <link rel="stylesheet" href="css/style.css" />
 <html lang="en">
-    <head>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-          <div class="container-fluid">       
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="event.html">Events</a>
-                </li>
-              </ul>
-          </div>
-        </nav>
-      </head>
+  <style>
+  footer
+  {
+    margin-top: 50%;
+  }
+  </style>
+
+
+  <head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+      <div class="container-fluid">       
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="event.html">Events</a>
+            </li>
+          </ul>
+      </div>
+    </nav>
+  </head>
 
       
-    <body>
-      <p class="pt-3"></p>
-      <form id="race-form">
-        <input type="text" name="stroke" id="stroke" placeholder="Stroke">
-        <input type="text" name="dis" id="dis" placeholder="Distance">
-        <input type="text" name="time" id="time" placeholder="Time">
-        <input type="button" value="Submit" onclick="addRow()" >
-      </form>
+  <body>
+    <p class="pt-3"></p>
+    <form id="race-form">
+      <input type="text" name="stroke" id="stroke" placeholder="Stroke">
+      <input type="text" name="dis" id="dis" placeholder="Distance">
+      <input type="text" name="time" id="time" placeholder="Time">
+      <input type="button" value="Submit" onclick="addRow()" >
+    </form>
 
-      <table class="table table-hover" id="table">
-        <thead>
-          <tr class="p-3 mb-2 bg-dark text-white">
-            <th scope="col" id="stroke">Stroke</th>
-            <th scope="col" id="dis">Race distance</th>
-            <th scope="col" id="time">Time</th>
-          </tr>
-        </thead>
-      </table>
-      <p class="pb-3"></p>
-    </body>
+    <table class="table table-hover" id="table">
+      <thead>
+        <tr class="p-3 mb-2 bg-dark text-white">
+          <th scope="col" id="stroke">Stroke</th>
+          <th scope="col" id="dis">Race distance</th>
+          <th scope="col" id="time">Time</th>
+        </tr>
+      </thead>
+    </table>
+    <p class="pb-3"></p>
+    <h2>Upcoming events</h2>
+    <p class="pt-2"></p>
+    <table class="table table-hover" id="table">
+      <thead>
+        <tr class="mb-2 bg-dark text-white" >
+          <th scope="col" id="Event">Event</th>
+          <th scope="col" id="location">location</th>
+          <th scope="col" id="time">Time</th>
+          <th scope="col" id="date">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td scope="row">Swimming race</td>
+          <td>st james swimming pool</td>
+          <td>10am-5pm</td>
+          <td>28th May 2021</td>
+        </tr>
+        <tr>
+          <td  scope="row">Meetup</td>
+          <td>st james swimming pool</td>
+          <td>6pm-9pm</td>
+          <td>5th June 2021</td>
+        </tr>
+        <tr>
+          <td scope="row">Swimming race</td>
+          <td>norwich swimming pool</td>
+          <td>9am-7pm</td>
+          <td>10th June 2021</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="pb-4"></p>
+  </body>
 
 
-    <script>
-      function addRow() 
-        {
-          "use strict";
-           var table = document.getElementById("table");
-           var row= document.createElement("tr");
-           var td1 = document.createElement("td");
-           var td2 = document.createElement("td");
-           var td3 = document.createElement("td");    
+  <script>
+    function addRow() 
+      {
+        "use strict";
+        var table = document.getElementById("table");
+        var row= document.createElement("tr");
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");    
        
-           td1.innerHTML = document.getElementById("stroke").value;
-           td2.innerHTML  = document.getElementById("dis").value;
-           td3.innerHTML  = document.getElementById("time").value;
+        td1.innerHTML = document.getElementById("stroke").value;
+        td2.innerHTML  = document.getElementById("dis").value;
+        td3.innerHTML  = document.getElementById("time").value;
        
-           row.appendChild(td1);
-           row.appendChild(td2);
-           row.appendChild(td3);
+        row.appendChild(td1);
+        row.appendChild(td2);
+        row.appendChild(td3);
        
-           table.children[0].appendChild(row);
-        }
-      </script>
+        table.children[0].appendChild(row);
+      }
+  </script>
 
 
-      <footer
-          class="text-center text-lg-start text-white"
-          style="background-color: #454446"
-          >
+  <footer class="text-center text-lg-start text-white" style="background-color: #454446">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Links -->
